@@ -1,19 +1,37 @@
+@include mediaXl {
+  #work .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@include mediaLg {
+  #work .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @include mediaMd {
-  #home {
+  #home,
+  #about,
+  #work,
+  #contact {
     align-items: center;
     text-align: center;
+    padding-top: 5vh;
 
     .lg-heading {
       line-height: 1;
       margin-bottom: 2rem;
-      margin-top: 30vh;
+      font-size: 5rem;
+      margin-top: 5vh;
+    }
+  }
+  #home {
+    .lg-heading {
+      margin-top: 15vh;
     }
   }
   #about {
-    text-align: center;
-    .lg-heading {
-      font-size: 5rem;
-    }
     .about-info {
       flex-direction: column;
       p {
@@ -21,12 +39,23 @@
       }
     }
   }
+
+  #work .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @include mediaSm {
-  main#home .lg-heading {
-    font-size: 5rem;
-    margin-top: 25vh;
+  #home,
+  #about,
+  #work,
+  #contact {
+    .lg-heading {
+      font-size: 4rem;
+    }
+    .sm-heading {
+      font-size: 1rem;
+    }
   }
 
   ul.menu-nav,
@@ -55,10 +84,7 @@
     }
   }
 
-  #about {
-    .lg-heading {
-      padding-top: 10%;
-      font-size: 4rem;
-    }
+  #work .projects {
+    grid-template-columns: 1fr;
   }
 }

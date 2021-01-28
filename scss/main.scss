@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -10,7 +9,7 @@ body {
   @include background;
   background: $primary-color;
   color: set-text-color($primary-color);
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
@@ -67,6 +66,7 @@ main {
   }
 
   &#home {
+    @include overlay;
     overflow: hidden;
     h1 {
       margin-top: 20vh;
@@ -175,9 +175,7 @@ main {
 // about page
 
 #about {
-  .lg-heading {
-    margin-top: 5%;
-  }
+  @include overlay;
   .about-info {
     display: flex;
     margin-top: 4%;
@@ -196,6 +194,54 @@ main {
   }
 }
 
+// work/projects page
+
+#work {
+  background-color: rgba($primary-color, 0.9);
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+    img {
+      width: 100%;
+      border: 2px solid #fff;
+
+      &:hover {
+        opacity: 0.5;
+        border-color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+    @include easeOut;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #444;
+}
+
 #main-footer {
   text-align: right;
   padding: 5px 4%;
@@ -205,3 +251,5 @@ main {
   width: 100%;
   bottom: 0;
 }
+
+@import "mobile";

@@ -36,71 +36,6 @@
           transform: rotate(-45deg) translate(6px, -6px);
 }
 
-@media screen and (max-width: 768px) {
-  #home {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-  }
-  #home .lg-heading {
-    line-height: 1;
-    margin-bottom: 2rem;
-    margin-top: 30vh;
-  }
-  #about {
-    text-align: center;
-  }
-  #about .lg-heading {
-    font-size: 5rem;
-  }
-  #about .about-info {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  #about .about-info p {
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main#home .lg-heading {
-    font-size: 5rem;
-    margin-top: 25vh;
-  }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-  }
-  ul.menu-nav.show,
-  div.menu-branding.show {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-  ul.menu-nav {
-    height: 60vh;
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0);
-  }
-  div.menu-branding {
-    height: 40vh;
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-  }
-  div.menu-branding .portrait {
-    background: url(/dist/img/daniel-small.png);
-    width: 150px;
-    height: 150px;
-  }
-  #about .lg-heading {
-    padding-top: 10%;
-    font-size: 4rem;
-  }
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -109,7 +44,7 @@
 body {
   background: #444;
   color: #fff;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
@@ -119,17 +54,6 @@ body#bg-img {
   background: url(/dist/img/background.jpg);
   background-attachment: fixed;
   background-size: cover;
-}
-
-body#bg-img:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: rgba(68, 68, 68, 0.9);
 }
 
 h1,
@@ -188,6 +112,8 @@ main .icons a:hover {
 }
 
 main#home {
+  height: 100vh;
+  background-color: rgba(68, 68, 68, 0.9);
   overflow: hidden;
 }
 
@@ -316,8 +242,9 @@ main#home h1 {
           transition-delay: 0.4s;
 }
 
-#about .lg-heading {
-  margin-top: 5%;
+#about {
+  height: 100vh;
+  background-color: rgba(68, 68, 68, 0.9);
 }
 
 #about .about-info {
@@ -340,6 +267,55 @@ main#home h1 {
   font-size: 1.3rem;
 }
 
+#work {
+  background-color: rgba(68, 68, 68, 0.9);
+}
+
+#work .projects {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+#work .projects img {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+#work .projects img:hover {
+  opacity: 0.5;
+  border-color: #e68b41;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.btn:hover, .btn-dark:hover, .btn-light:hover {
+  background: #e68b41;
+  color: #000;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.btn-dark {
+  background: black;
+  color: #fff;
+}
+
+.btn-light {
+  background: #c4c4c4;
+  color: #444;
+}
+
 #main-footer {
   text-align: right;
   padding: 5px 4%;
@@ -347,5 +323,101 @@ main#home h1 {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+@media screen and (min-width: 1171px) {
+  #work .projects {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 769) and (max-width: 1170px) {
+  #work .projects {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #home,
+  #about,
+  #work,
+  #contact {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding-top: 5vh;
+  }
+  #home .lg-heading,
+  #about .lg-heading,
+  #work .lg-heading,
+  #contact .lg-heading {
+    line-height: 1;
+    margin-bottom: 2rem;
+    font-size: 5rem;
+    margin-top: 5vh;
+  }
+  #home .lg-heading {
+    margin-top: 15vh;
+  }
+  #about .about-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #about .about-info p {
+    font-size: 0.9rem;
+  }
+  #work .projects {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #home .lg-heading,
+  #about .lg-heading,
+  #work .lg-heading,
+  #contact .lg-heading {
+    font-size: 4rem;
+  }
+  #home .sm-heading,
+  #about .sm-heading,
+  #work .sm-heading,
+  #contact .sm-heading {
+    font-size: 1rem;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+  }
+  ul.menu-nav.show,
+  div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  ul.menu-nav {
+    height: 60vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  div.menu-branding {
+    height: 40vh;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  div.menu-branding .portrait {
+    background: url(/dist/img/daniel-small.png);
+    width: 150px;
+    height: 150px;
+  }
+  #work .projects {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 /*# sourceMappingURL=main.css.map */
