@@ -36,6 +36,71 @@
           transform: rotate(-45deg) translate(6px, -6px);
 }
 
+@media screen and (max-width: 768px) {
+  #home {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #home .lg-heading {
+    line-height: 1;
+    margin-bottom: 2rem;
+    margin-top: 30vh;
+  }
+  #about {
+    text-align: center;
+  }
+  #about .lg-heading {
+    font-size: 5rem;
+  }
+  #about .about-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #about .about-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main#home .lg-heading {
+    font-size: 5rem;
+    margin-top: 25vh;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+  }
+  ul.menu-nav.show,
+  div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  ul.menu-nav {
+    height: 60vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  div.menu-branding {
+    height: 40vh;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  div.menu-branding .portrait {
+    background: url(/dist/img/daniel-small.png);
+    width: 150px;
+    height: 150px;
+  }
+  #about .lg-heading {
+    padding-top: 10%;
+    font-size: 4rem;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -44,7 +109,7 @@
 body {
   background: #444;
   color: #fff;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
@@ -100,11 +165,11 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: #e68b41;
 }
 
 main {
-  padding: 4rem;
+  padding: 4%;
   height: 100%;
 }
 
@@ -117,7 +182,7 @@ main .icons a {
 }
 
 main .icons a:hover {
-  color: #eece1a;
+  color: #e68b41;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -197,7 +262,7 @@ main#home h1 {
   height: 250px;
   background: url("/dist/img/daniel.png");
   border-radius: 50%;
-  border: solid 3px #eece1a;
+  border: solid 3px #e68b41;
 }
 
 .menu .nav-item {
@@ -213,7 +278,7 @@ main#home h1 {
 }
 
 .menu .nav-item.current a {
-  color: #eece1a;
+  color: #e68b41;
 }
 
 .menu .nav-link {
@@ -228,7 +293,7 @@ main#home h1 {
 }
 
 .menu .nav-link:hover {
-  color: #eece1a;
+  color: #e68b41;
 }
 
 .nav-item:nth-child(1) {
@@ -249,5 +314,38 @@ main#home h1 {
 .nav-item:nth-child(4) {
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
+}
+
+#about .lg-heading {
+  margin-top: 5%;
+}
+
+#about .about-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4%;
+}
+
+#about .about-info .bio-image {
+  margin-right: 2%;
+}
+
+#about .about-info .bio-image img {
+  border-radius: 50%;
+  border: 2px solid #e68b41;
+}
+
+#about .about-info .bio {
+  font-size: 1.3rem;
+}
+
+#main-footer {
+  text-align: right;
+  padding: 5px 4%;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 /*# sourceMappingURL=main.css.map */
