@@ -6,7 +6,14 @@
 
 @include mediaLg {
   #work .projects {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #contact {
+    background-color: rgba($primary-color, 0.9);
+    .contact {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -42,6 +49,10 @@
 
   #work .projects {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .google-map {
+    width: 500px;
   }
 }
 
@@ -86,5 +97,15 @@
 
   #work .projects {
     grid-template-columns: 1fr;
+  }
+
+  #contact {
+    .contact-info {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .google-map {
+      width: 300px;
+    }
   }
 }
