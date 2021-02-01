@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Responsive Portfolio Website",
   "main": "index.js",
-  "homepage": "http://chesterdany.github.io/portfolio",
+  "homepage": "https://chesterdany.github.io/portfolio",
   "scripts": {
     "deploy": "gh-pages -d dist"
   },

@@ -10,7 +10,6 @@
   }
 
   #contact {
-    background-color: rgba($primary-color, 0.9);
     .contact {
       grid-template-columns: 1fr;
     }
@@ -100,6 +99,7 @@
   }
 
   #contact {
+    // height: 100%;
     .contact-info {
       font-size: 1rem;
       text-align: center;
