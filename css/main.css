@@ -457,7 +457,7 @@ main#home h1 {
             transform: translate3d(-100%, 0, 0);
   }
   div.menu-branding .portrait {
-    background: url(/dist/img/daniel-small.png);
+    background-image: url("../img/daniel-small.png");
     width: 150px;
     height: 150px;
   }
