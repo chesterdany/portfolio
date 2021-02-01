@@ -186,7 +186,7 @@ main#home h1 {
 .menu-branding .portrait {
   width: 250px;
   height: 250px;
-  background: url("/dist/img/daniel.png");
+  background: url("../dist/img/daniel-small.png");
   border-radius: 50%;
   border: solid 3px #e68b41;
 }
@@ -375,9 +375,6 @@ main#home h1 {
   #work .projects {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-  }
-  #contact {
-    background-color: rgba(68, 68, 68, 0.9);
   }
   #contact .contact {
     -ms-grid-columns: 1fr;
