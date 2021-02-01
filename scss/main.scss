@@ -128,7 +128,7 @@ main {
     .portrait {
       width: 250px;
       height: 250px;
-      background: url("../dist/img/daniel-small.png");
+      background-image: url("./img/daniel-small.png");
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
